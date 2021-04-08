@@ -120,6 +120,7 @@ a {
 
 .badge--small {
 	font-size: 1.6rem;
+	padding: 0.5rem 1.5rem;
 }
 
 @media screen and (min-width: 1024px) {
@@ -151,6 +152,7 @@ a {
 
 .list--tick .list__item {
 	padding-left: 0.5rem;
+	margin-bottom: 1rem;
 }
 
 @media screen and (min-width: 1024px) {
@@ -175,11 +177,11 @@ a {
 }
 
 .icon--white {
-	fill: white;
+	fill: #fff;
 }
 
 .icon-container {
-	background-color: #f3f9fa;
+	background: #f3f9fa;
 	width: 64px;
 	height: 64px;
 	border-radius: 100%;
@@ -200,10 +202,18 @@ a {
 	font-size: 1.8rem;
 	font-weight: 600;
 	margin: 1rem 0;
+	outline: 0;
 	padding: 2rem 3rem;
 	text-align: center;
 	text-transform: uppercase;
 	white-space: nowrap;
+}
+
+.btn .icon {
+	width: 2rem;
+	height: 2rem;
+	margin-right: 1rem;
+	vertical-align: middle;
 }
 
 .btn--primary {
@@ -233,6 +243,17 @@ a {
 	background: #ec3000;
 }
 
+.btn--outline {
+	background: #fff;
+	color: var(--color-headings);
+	border: 2px solid var(--color-headings);
+}
+
+.btn--outline:hover {
+	background: var(--color-headings);
+	color: #fff;
+}
+
 .btn--stretched {
 	padding-left: 6rem;
 	padding-right: 6rem;
@@ -241,12 +262,6 @@ a {
 .btn--block {
 	width: 100%;
 	display: inline-block;
-}
-
-.btn--outline {
-	background: #fff;
-	color: var(--color-headings);
-	border: 2px solid var(--color-headings);
 }
 
 @media screen and (min-width: 1024px) {
@@ -266,7 +281,7 @@ a {
 }
 
 ::placeholder {
-	color: #cdcbc7;
+	color: #cdcbd7;
 }
 
 .input-group {
@@ -278,7 +293,7 @@ a {
 .input-group .input {
 	border: 0;
 	flex-grow: 1;
-	padding: 1.5rem 1rem;
+	padding: 1.5rem 2rem;
 }
 
 .input-group .btn {
@@ -347,7 +362,7 @@ a {
 	margin-bottom: 2rem;
 }
 
-.plan--popular .card__header::before {
+.plan--popular .card__header {
 	position: relative;
 }
 
@@ -361,11 +376,11 @@ a {
 }
 
 @media screen and (min-width: 1024px) {
-	.plan_name {
+	.plan__name {
 		font-size: 1.4rem;
 	}
 
-	.plan_price {
+	.plan__price {
 		font-size: 5rem;
 	}
 
@@ -464,12 +479,11 @@ a {
 /* Testimonials */
 .testimonial {
 	padding: 3rem;
-	overflow: visible;
-	margin-right: 2px;
 }
 
 .testimonial__image {
 	position: relative;
+	margin: 0 3rem;
 }
 
 .testimonial__image > img {
@@ -483,6 +497,10 @@ a {
 }
 
 @media screen and (min-width: 768px) {
+	.testimonial__image {
+		margin: 0;
+	}
+
 	.testimonial .quote,
 	.testimonial .quote__author {
 		font-size: 2.4rem;
@@ -490,6 +508,7 @@ a {
 
 	.testimonial .quote {
 		margin-left: 6rem;
+		margin-right: 0;
 	}
 }
 
@@ -691,5 +710,30 @@ a {
 	.hero__content {
 		text-align: left;
 		align-self: center;
+	}
+}
+
+/* Domain Block */
+.block-domain .input-group {
+	box-shadow: 0 0 30px 20px #e6ebee;
+	border: 0;
+	margin: 4rem auto;
+	max-width: 670px;
+}
+
+.block-domain__prices {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(2, 6rem);
+	font-size: 2rem;
+	font-weight: 600;
+	justify-items: center;
+	max-width: 700px;
+	margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+	.block-domain__prices {
+		grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
 	}
 }
